@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/ui/pages/home_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -14,7 +15,7 @@ class _MainPageState extends State<MainPage> {
   void initState() {
     super.initState();
     _pages = [
-      Container(color: Colors.red),
+      HomePage(),
       Container(color: Colors.blue),
       Container(color: Colors.white),
       Container(color: Colors.red),
@@ -25,13 +26,6 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 100,
-        backgroundColor: Colors.white,
-        title: SafeArea(
-          child: Column(children: [_buildAddress(), _buildSearchBar()]),
-        ),
-      ),
       backgroundColor: Colors.white,
       body: _pages.elementAt(_currentPage),
       bottomNavigationBar: BottomNavigationBar(
@@ -58,27 +52,6 @@ class _MainPageState extends State<MainPage> {
           ),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
         ],
-      ),
-    );
-  }
-
-  Widget _buildAddress() {
-    return Text("Minh tri dep trai hehehe");
-  }
-
-  Widget _buildSearchBar() {
-    return TextField(
-      decoration: InputDecoration(
-        filled: true,
-        fillColor: Color(0xffE38191),
-        hintText: "Search",
-        hintStyle: TextStyle(color: Colors.white),
-        prefixIcon: const Icon(Icons.search, color: Colors.white),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20),
-          borderSide: BorderSide.none,
-        ),
-        contentPadding: const EdgeInsets.symmetric(vertical: 8),
       ),
     );
   }
