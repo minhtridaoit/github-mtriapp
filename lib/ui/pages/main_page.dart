@@ -45,7 +45,10 @@ class _MainPageState extends State<MainPage> {
             icon: Icon(Icons.favorite),
             label: "Favorite",
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.list), label: "Order"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: "Order",
+          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notifications),
             label: "Notifications",
